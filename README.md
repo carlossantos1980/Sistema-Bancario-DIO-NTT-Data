@@ -18,13 +18,13 @@ Sistema iniciado...
 
 class Banco:
     def __init__(self):
-            self.saldo = 0.0
+            self.saldo = 0
             self.extrato = []
 
     def depositar(self, valor):
         if valor > 0:
             self.saldo += valor
-            self.extrato.append(f'Depósito: R${valor:.2f}')
+            self.extrato.append(f'💰Depósito: R${valor:.2f}')
             print(f'💰Depósito de R${valor:.2f} realizado com sucesso!')
         else:
             print('❌Valor de depósito deve ser positivo!')
@@ -33,12 +33,12 @@ class Banco:
         if valor > 0:
             if valor <= self.saldo:
                 self.saldo -= valor
-                self.extrato.append(f'Saque: R${valor:.2f}')
+                self.extrato.append(f'💲Saque: R${valor:.2f}')
                 print(f'💲Saque de R${valor:.2f} realizado com sucesso!')
             else:
                 print('\n❌Saldo insuficiente para realizar o saque!')
         else:
-            print('Valor de saque deve ser positivo!')
+            print('❌Valor de saque deve ser positivo!')
 
     def exibir_extrato(self):
         print("\n--- Extrato ---")
@@ -48,7 +48,6 @@ class Banco:
             for operacao in self.extrato:
                 print(operacao)
         print(f'💲Saldo atual: R${self.saldo:.2f}\n')
-
 
 def main():
     banco = Banco()
@@ -67,7 +66,7 @@ def main():
         elif opcao == '3':
             banco.exibir_extrato()
         elif opcao == '4':
-            print("Saindo... Até logo!")
+            print("\n❌Saindo... Até logo!\n🏦Obrigado por utilizar o Banco DIO!\n")
             break
         else:
             print("Opção inválida! Tente novamente.")
